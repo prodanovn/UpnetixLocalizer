@@ -1,0 +1,11 @@
+framework module MyFinder {
+  umbrella header "MyFinder.h"
+
+  export *
+  module * { export * }
+}
+
+module MyFinder.Swift {
+    header "MyFinder-Swift.h"
+    requires objc
+}
