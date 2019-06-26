@@ -10,18 +10,10 @@ if [ ! -d ${SRCROOT}/${TARGET_NAME} ]; then
 mkdir -p ${SRCROOT}/${TARGET_NAME}
 fi
 
-for ARGUMENT in "$@"
-do
-KEY=$(echo $ARGUMENT | cut -f1 -d=)
-VALUE=$(echo $ARGUMENT | cut -f2 -d=)
-case "$KEY" in
-APP_ID)              APP_ID=${VALUE} ;;
-SALT)              SALT=${VALUE} ;;
-BASE_URL)              BASE_URL=${VALUE} ;;
-DOMAINS)    DOMAINS=${VALUE} ;;
-*)
-esac
-done
+APP_ID=$(/usr/libexec/PlistBuddy -c "Print :APP_ID" ../My.plist)
+SALT=$(/usr/libexec/PlistBuddy -c "Print :SALT" ../My.plist)
+DOMAINS=$(/usr/libexec/PlistBuddy -c "Print :DOMAINS" ../My.plist)
+BASE_URL=$(/usr/libexec/PlistBuddy -c "Print :BASE_URL" ../My.plist)
 
 # GENERATE JSON CONFIG FILE
 echo "****** Create Config file ******"
