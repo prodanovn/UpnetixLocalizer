@@ -9,7 +9,9 @@ fi
 if [ ! -d ${SRCROOT}/${TARGET_NAME} ]; then
 mkdir -p ${SRCROOT}/${TARGET_NAME}
 fi
-
+echo "--------------"
+pwd
+echo "--------------"
 APP_ID=$(/usr/libexec/PlistBuddy -c "Print :APP_ID" ../My.plist)
 SALT=$(/usr/libexec/PlistBuddy -c "Print :SALT" ../My.plist)
 DOMAINS=$(/usr/libexec/PlistBuddy -c "Print :DOMAINS" ../My.plist)
