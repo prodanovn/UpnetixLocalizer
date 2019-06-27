@@ -12,10 +12,10 @@ fi
 echo "---------------"
 pwd
 echo "---------------"
-APP_ID=$(/usr/libexec/PlistBuddy -c "Print :APP_ID" /My.plist)
-SALT=$(/usr/libexec/PlistBuddy -c "Print :SALT" /My.plist)
-DOMAINS=$(/usr/libexec/PlistBuddy -c "Print :DOMAINS" /My.plist)
-BASE_URL=$(/usr/libexec/PlistBuddy -c "Print :BASE_URL" /My.plist)
+APP_ID=$(/usr/libexec/PlistBuddy -c "Print :APP_ID" My.plist)
+SALT=$(/usr/libexec/PlistBuddy -c "Print :SALT" My.plist)
+DOMAINS=$(/usr/libexec/PlistBuddy -c "Print :DOMAINS" My.plist)
+BASE_URL=$(/usr/libexec/PlistBuddy -c "Print :BASE_URL" My.plist)
 
 # GENERATE JSON CONFIG FILE
 echo "****** Create Config file ******"
