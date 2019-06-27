@@ -58,6 +58,10 @@ fi
 # END REQUEST FOR LOCALIZATIONS
 
 # UNZIP ALL ZIP FILES
+echo $SRCROOT
+echo $TARGET_NAME
+echo $ZIP_FILE_NAME
+echo $LOCALIZATION_DIRECTORY
 echo "****** Unzipping file ${ZIP_FILE_NAME} to ${LOCALIZATION_DIRECTORY} ****** "
 unzip -o ${SRCROOT}/${TARGET_NAME}/${ZIP_FILE_NAME} -d ${LOCALIZATION_DIRECTORY}
 echo "****** unzipping domain files ***** "
