@@ -62,11 +62,11 @@ echo $SRCROOT
 echo $TARGET_NAME
 echo $ZIP_FILE_NAME
 echo $LOCALIZATION_DIRECTORY
-echo "****** Unzipping file ${ZIP_FILE_NAME} to ${LOCALIZATION_DIRECTORY} ****** "
-unzip -o ${SRCROOT}/${TARGET_NAME}/${ZIP_FILE_NAME} -d ${SRCROOT}/${TARGET_NAME}
+echo "****** Unzipping file ${ZIP_FILE_NAME} to ${SRCROOT}/${TARGET_NAME}/Localizations ****** "
+unzip -o ${SRCROOT}/${TARGET_NAME}/${ZIP_FILE_NAME} -d ${SRCROOT}/${TARGET_NAME}/Localizations
 echo "****** unzipping domain files ***** "
 
-for domain_dir in ${SRCROOT}/${TARGET_NAME}/*
+for domain_dir in ${SRCROOT}/${TARGET_NAME}/Localizations/*
 do
 cd ${domain_dir}
 unzip -o "*.zip"
