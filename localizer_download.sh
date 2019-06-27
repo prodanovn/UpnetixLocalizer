@@ -1,7 +1,7 @@
 ZIP_FILE_NAME="localizations.zip"
 DOMAINS_PATTERN="[,]"
 PROJECT_TARGET_NAME=$(/usr/libexec/PlistBuddy -c "Print :PROJECT_TARGET_NAME" ../My.plist)
-LOCALIZATION_DIRECTORY=${CONFIGURATION_BUILD_DIR}/UpnetixLocalizerDemo.app/Localizations
+LOCALIZATION_DIRECTORY=/UpnetixLocalizerDemo.app/Localizations
 
 if [ ! -d ${LOCALIZATION_DIRECTORY} ]; then
 mkdir -p ${LOCALIZATION_DIRECTORY}
