@@ -1,6 +1,6 @@
 ZIP_FILE_NAME="localizations.zip"
 DOMAINS_PATTERN="[,]"
-LOCALIZATION_DIRECTORY=${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localizations
+LOCALIZATION_DIRECTORY=${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizations
 
 if [ ! -d ${LOCALIZATION_DIRECTORY} ]; then
 mkdir -p ${LOCALIZATION_DIRECTORY}
@@ -58,15 +58,16 @@ fi
 # END REQUEST FOR LOCALIZATIONS
 
 # UNZIP ALL ZIP FILES
+echo "PRINT SCRROOT, TARGET_NAME, ZIP_FILE_NAME, LOCALIZATION_DIRECTORY"
 echo $SRCROOT
 echo $TARGET_NAME
 echo $ZIP_FILE_NAME
 echo $LOCALIZATION_DIRECTORY
-echo "****** Unzipping file ${ZIP_FILE_NAME} to ${SRCROOT}/${TARGET_NAME}/Localizations ****** "
-unzip -o ${SRCROOT}/${TARGET_NAME}/${ZIP_FILE_NAME} -d ${SRCROOT}/${TARGET_NAME}/Localizations
+echo "****** Unzipping file ${ZIP_FILE_NAME} to ${LOCALIZATION_DIRECTORY} ****** "
+unzip -o ${SRCROOT}/${TARGET_NAME}/${ZIP_FILE_NAME} -d ${LOCALIZATION_DIRECTORY}
 echo "****** unzipping domain files ***** "
 
-for domain_dir in ${SRCROOT}/${TARGET_NAME}/Localizations/*
+for domain_dir in ${LOCALIZATION_DIRECTORY}/*
 do
 cd ${domain_dir}
 unzip -o "*.zip"
